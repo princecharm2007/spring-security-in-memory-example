@@ -15,9 +15,11 @@
 	<security:http use-expressions="true">
 		<!-- Avalia as regras de cima para baixo -->	
 	    <security:intercept-url pattern="/index.jsp" access="permitAll" />
-	    <security:intercept-url pattern="/principal.html" access="isAuthenticated()" />
-	    <security:intercept-url pattern="/" access="isAuthenticated()" />	    
+	    <security:intercept-url pattern="/" access="permitAll" />
+	    
+	    <security:intercept-url pattern="/principal.html" access="isAuthenticated()" />	    	    
 	    <security:intercept-url pattern="/**" access="denyAll" />	
+	    
 		<security:form-login />
 		<security:logout/>
 	</security:http>
